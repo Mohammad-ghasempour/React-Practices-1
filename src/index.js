@@ -1,6 +1,7 @@
 import React from "react";
 import reactDom from "react-dom";
 import SeasonDisplay from "./SeasonDisplay";
+import Spinner from "./Spinner";
 
 class App extends React.Component{
 
@@ -32,7 +33,7 @@ class App extends React.Component{
                 return <div>Error!: {this.state.errorMessage}</div>
             }
      
-           else return <div>Loading . . .</div>
+           else return <Spinner message="Plase allow access location" />
         
     }
 }

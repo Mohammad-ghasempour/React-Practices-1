@@ -1,24 +1,49 @@
 import React from "react";
+import "./MyStyle.css";
 
-const checkSeason = (lat , month) =>{
-    if (month>2 && month<9){
-        return lat>0 ? 'Summer' : 'Winter';
+const seasonConfig = {
+    Winter:{
+        appropriateText : 'Burr, It\'s chilly',
+        appropriateIcon : 'ac_unit'
+    },
+    Summer:{
+        appropriateText : 'let\'s heat the beach',
+        appropriateIcon : 'wb_sunny'
+    }
+    
+}
+
+const checkSeason = (lat, month) => {
+    if (month > 2 && month < 9) {
+        return lat > 0 ? 'Summer' : 'Winter';
     }
     else {
-        return lat>0 ? 'Winter' : 'Summer';
+        return lat > 0 ? 'Winter' : 'Summer';
     }
 }
 
 const SeasonDisplay = props => {
-    const season = checkSeason(props.lat , new Date().getMonth());
-return( 
-    <div>
-        <div> Latitude is : {props.lat}</div>
-        <div> We are in<strong> {new Date().getMonth()}th </strong> of Month</div> <br/>
+    
+    const season = checkSeason(props.lat, new Date().getMonth());
+    const {appropriateText , appropriateIcon} = seasonConfig[season];
+    return (
+        <div>
+              <span className={`material-icons xxLarge icon-left ${season}`}>{appropriateIcon}</span>
+              <div className="text-center">
 
-<div> So, the Season in this location is:<strong> {season} </strong></div>
-</div>
-)
+                <div> Latitude is : {props.lat}</div>
+                <div> We are in<strong> {new Date().getMonth()}th </strong> of Month</div> <br />
+
+                <div> So, the Season in this location is:<strong> {season} </strong></div>
+                <div> {appropriateText}</div>
+              </div>
+
+              <span className={`material-icons xxLarge icon-right ${season}`}>{appropriateIcon}</span>
+            
+     
+
+        </div>
+    )
 }
 
 export default SeasonDisplay;

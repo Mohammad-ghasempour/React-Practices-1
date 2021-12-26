@@ -1,0 +1,49 @@
+.xxLarge {
+    font-size: 86px;
+}
+.icon-left{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+.icon-right{
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+.text-center{
+    position: absolute;
+    top:40%;
+    left:40%;
+    }
+.Winter{
+    color: rgb(102, 102, 255);
+}
+.Summer{
+    color:rgb(255, 123, 75)
+}
+
+/* Css for Spinner */
+.loader {
+    
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
