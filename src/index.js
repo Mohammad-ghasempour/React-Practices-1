@@ -5,12 +5,9 @@ import Spinner from "./Spinner";
 
 class App extends React.Component{
 
-    constructor(props){
-        super(props);
-        this.state = {latitude: null , errorMessage:''}
 
-        
-    }
+    state ={ latitude: null , errorMessage: ''}
+
     componentDidMount(){
         window.navigator.geolocation.getCurrentPosition(
             position => {
@@ -21,11 +18,10 @@ class App extends React.Component{
             }
         )    }
 
-    componentDidUpdate(){
-    }
 
 
     render(){
+       
             if (this.state.latitude && !this.state.errorMessage){
                 return <SeasonDisplay lat={this.state.latitude} />
             }
@@ -33,7 +29,7 @@ class App extends React.Component{
                 return <div>Error!: {this.state.errorMessage}</div>
             }
      
-           else return <Spinner message="Plase allow access location" />
+           else return <Spinner message=" Loading..." />
         
     }
 }

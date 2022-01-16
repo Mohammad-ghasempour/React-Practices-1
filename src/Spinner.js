@@ -1,15 +1,15 @@
 import React from "react";
 
-const Spinner = props =>{
+const Spinner = props => {
     return (
         <div>
-        <div className="loader"></div>{props.message}
-    </div>
+            <div className="loader"></div>{props.message}
+        </div>
     )
-
 }
+
 Spinner.defaultProps = {
-    message : "Loading..."
+    message: "we are trying to find your location"
 }
 
 export default Spinner
