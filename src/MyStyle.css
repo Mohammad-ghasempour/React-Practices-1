@@ -1,3 +1,7 @@
+.backblue{
+    background-color: rgb(118, 248, 226) !important;
+    /* height: 100vh; */
+}
 .xxLarge {
     font-size: 86px;
 }
@@ -35,4 +39,13 @@
     animation: spin 2s linear infinite;
   }
   
-
+/* Safari */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }

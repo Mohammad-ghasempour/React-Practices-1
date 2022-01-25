@@ -4,6 +4,7 @@ const Spinner = props => {
     return (
         <div>
             <div className="loader"></div>{props.message}
+
         </div>
     )
 }
